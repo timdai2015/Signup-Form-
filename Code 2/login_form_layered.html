@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Modified by TimDai Thanks for the original author riliwanrabo -->
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>login form layered  - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.1/css/bootstrapValidator.min.css"/>
+
+
+		
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.1/css/bootstrapValidator.min.css"/>
+    
+    <style type="text/css">
+
+
+html,body{
+    position: relative;
+    height: 100%;
+}
+
+.title{
+	margin-top:130px;
+	color:#9D9D9D;	
+}
+
+
+.login-container{
+    position: relative;
+    width: 450px;
+    margin: 30px auto;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background:#F0F0F0;
+    /*border: 1px solid #ccc;*/
+	border-radius: 10px 10px 10px 10px;
+
+}	
+
+.form-group {
+	margin-bottom:10px;	
+}
+
+
+.form-box input{
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    height:40px;
+    border: 0px solid #ccc;
+    background:#FFFFFF;
+    transition:0.2s ease-in-out;
+	
+
+}
+
+.form-box select{
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    height:40px;
+    border: 0px solid #ccc;
+    background:#FFFFFF;
+    transition:0.2s ease-in-out;
+	
+
+}
+
+/*.shadow {
+   -moz-box-shadow:    inset 0 0 1px #000000;
+   -webkit-box-shadow: inset 0 0 1px #000000;
+   box-shadow:         inset 0 0 2px #000000;
+}*/
+
+
+.form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+.top-input{
+    border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.middle-inputs{
+    /*border-top:0 !important;*/
+	margin-top:0px;
+	border-radius: 5px 5px 5px 5px;
+
+}
+
+
+.bottom-input{
+    border-radius: 0 0 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	margin-top:10px;
+
+
+}
+
+.form-box button.login{
+    margin-top:15px;
+    padding: 10px 20px;
+}
+
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 0px solid #FFFFFF;
+  
+}
+ 
+input[type=text]:focus,input[type=email]:focus, input[type=url]:focus, input[type=tel]:focus, input[type=password]:focus, textarea:focus {
+  box-shadow: 0 0 0px rgba(81, 203, 238, 1);
+/*  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;*/
+  border: 1px solid rgba(81, 203, 238, 1);
+  background-color:#FFFFFF;
+  
+}
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+	<div class="title text-center">
+		<h2> Sign Up </h2>
+    </div>
+	<div class="login-container">
+            <div class="form-box">
+            
+                <form action="" method="post" id="attributeForm"  data-bv-message="This value is not valid"
+    data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+    data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+    data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" >
+                    <div class="form-group">
+                    <input type="text" class="form-control top-input" name="firstName" placeholder="First name"
+                data-bv-notempty="true"
+                data-bv-notempty-message="Please fill in your First Name" />
+                    </div>
+                    
+                    <div class="form-group">
+                    <input class="form-control middle-inputs " name="user" type="text" placeholder="Last Name"
+                    data-bv-notempty="true"
+                data-bv-notempty-message="Please fill in your Last Name">
+                    
+                    </div>
+                    
+                    <div class="form-group">
+                    <input class="form-control middle-inputs" name="email" type="email" placeholder="Email" data-validation="email" data-bv-emailaddress="true" 
+                    data-bv-emailaddress-message="Please enter a valid email address" data-bv-notempty="true"
+                data-bv-notempty-message="Please fill in your Last Name">
+                
+                
+                	 </div>
+                     
+                    <div class="form-group">
+                    <input class="form-control middle-inputs " name="password" data-validation="strength" 
+		 data-validation-strength="2" type="password" placeholder="Password"
+         data-bv-notempty="true"
+                data-bv-notempty-message="The password is required and cannot be empty"
+
+                data-bv-identical="true"
+                data-bv-identical-field="confirmPassword"
+                data-bv-identical-message="The password and its confirm are not the same"
+
+                data-bv-different="true"
+                data-bv-different-field="username"
+                data-bv-different-message="The password cannot be the same as username" >
+                
+                	</div>
+                    </br>
+                    </br>
+                    </br>
+                    
+                    <div class="form-group">
+                    <input class="form-control middle-inputs" name="company" type="text" placeholder="Company" data-bv-notempty="true"
+                data-bv-notempty-message="Please fill in your company name">
+                    
+                    </div>
+                    <!--<input class="middle-inputs" name="link" type="url" placeholder="Desired Link">-->
+                    
+                    <div class="form-group">
+                    <input class="form-control middle-inputs" name="phone" type="text" placeholder="Phone" >
+                    </div>
+                    
+                                       
+						<select class="form-control middle-inputs" name="countrySelectBox" type="text" placeholder="Country">
+                          <option value="US">United States</option>
+                          <option value="CA">Canada</option>
+                          <option value="DK">Denmark</option>
+                          <option value="IT">Italy</option>
+                          <option value="NL">Netherlands</option>
+                          <option value="SE">Sweden</option>
+                          <option value="GB">United Kingdom</option>
+            			</select>                    
+                    <div class="form-group">
+                    <input class="form-control bottom-input" name="how" type="text" placeholder="How did you hear about us? (optional)">
+                    </div>
+                     
+                    <button class="btn btn-info btn-block login" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    
+</div>
+
+
+
+
+
+
+
+
+<form id="attributeForm" method="post" class="form-horizontal"
+    data-bv-message="This value is not valid"
+    data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+    data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+    data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+    <div class="form-group">
+            <input type="text" class="form-control" name="firstName" placeholder="First name"
+                data-bv-notempty="true"
+                data-bv-notempty-message="The first name is required and cannot be empty" />
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="lastName" placeholder="Last name"
+                data-bv-notempty="true"
+                data-bv-notempty-message="The last name is required and cannot be empty" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Username</label>
+        <div class="col-lg-5">
+            <input type="text" class="form-control" name="username"
+                data-bv-message="The username is not valid"
+
+                data-bv-notempty="true"
+                data-bv-notempty-message="The username is required and cannot be empty"
+
+                data-bv-regexp="true"
+                data-bv-regexp-regexp="^[a-zA-Z0-9_\.]+$"
+                data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
+
+                data-bv-stringlength="true"
+                data-bv-stringlength-min="6"
+                data-bv-stringlength-max="30"
+                data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+
+                data-bv-different="true"
+                data-bv-different-field="password"
+                data-bv-different-message="The username and password cannot be the same as each other" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Email address</label>
+        <div class="col-lg-5">
+            <input class="form-control" name="email" type="email"
+                data-bv-emailaddress="true"
+                data-bv-emailaddress-message="The input is not a valid email address" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Password</label>
+        <div class="col-lg-5">
+            <input type="password" class="form-control" name="password"
+                data-bv-notempty="true"
+                data-bv-notempty-message="The password is required and cannot be empty"
+
+                data-bv-identical="true"
+                data-bv-identical-field="confirmPassword"
+                data-bv-identical-message="The password and its confirm are not the same"
+
+                data-bv-different="true"
+                data-bv-different-field="username"
+                data-bv-different-message="The password cannot be the same as username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Retype password</label>
+        <div class="col-lg-5">
+            <input type="password" class="form-control" name="confirmPassword"
+                data-bv-notempty="true"
+                data-bv-notempty-message="The confirm password is required and cannot be empty"
+
+                data-bv-identical="true"
+                data-bv-identical-field="password"
+                data-bv-identical-message="The password and its confirm are not the same"
+
+                data-bv-different="true"
+                data-bv-different-field="username"
+                data-bv-different-message="The password cannot be the same as username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Languages</label>
+        <div class="col-lg-5">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="languages[]" value="english"
+                        data-bv-message="Please specify at least one language you can speak"
+                        data-bv-notempty="true" /> English
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="languages[]" value="french" /> French
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="languages[]" value="german" /> German
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="languages[]" value="russian" /> Russian
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="languages[]" value="other" /> Other
+                </label>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.1/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.1/js/bootstrapValidator.min.js"></script>
+
+<!--
+<script>
+
+$(document).ready(function() {
+    $('#attributeForm').bootstrapValidator();
+});
+
+</script>-->
+
+<script>
+$(document).ready(function() {
+    $('#attributeForm').bootstrapValidator({
+        container: 'tooltip',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            phone: {
+                validators: {
+                    digits: {
+                        message: 'The phone number can contain digits only'
+                    },
+                    notEmpty: {
+                        message: 'The phone number is required'
+                    }
+                }
+            }
+        }
+    });
+});
+
+</script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>
+<script>
+ 
+  $.validate({
+    modules : 'location, date, security, file',
+    onModulesLoaded : function() {
+      $('#country').suggestCountry();
+    }
+  });
+ 
+  // Restrict presentation length
+  $('#presentation').restrictLength( $('#pres-max-length') );
+ 
+</script>
+
+-->
+
+
+<!--<script type="text/javascript">
+$(function(){
+var textfield = $("input[name=user]");
+            $('button[type="submit"]').click(function(e) {
+                e.preventDefault();
+                //little validation just to check username
+                if (textfield.val() != "") {
+                    //$("body").scrollTo("#output");
+                    $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
+                    $("#output").removeClass(' alert-danger');
+                    $("input").css({
+                    "height":"0",
+                    "padding":"0",
+                    "margin":"0",
+                    "opacity":"0"
+                    });
+                    //change button text 
+                    $('button[type="submit"]').html("continue")
+                    .removeClass("btn-info")
+                    .addClass("btn-default").click(function(){
+                    $("input").css({
+                    "height":"auto",
+                    "padding":"10px",
+                    "opacity":"1"
+                    }).val("");
+                    });
+                    
+                    //show avatar
+                    $(".avatar").css({
+                        "background-image": "url('http://api.randomuser.me/0.3.2/portraits/women/35.jpg')"
+                    });
+                } else {
+                    //remove success mesage replaced with error message
+                    $("#output").removeClass(' alert alert-success');
+                    $("#output").addClass("alert alert-danger animated fadeInUp").html("sorry enter a username ");
+                }
+                //console.log(textfield.val());
+
+            });
+});
+</script>-->
+
+
+</body>
+</html>
